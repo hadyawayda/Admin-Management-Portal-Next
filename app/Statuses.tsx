@@ -3,10 +3,10 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 const statuses = [
-    { name: 'Todo' },
-    { name: 'Doing' },
-    { name: 'Done' },
-  ]
+  { name: 'Todo' },
+  { name: 'Doing' },
+  { name: 'Done' },
+]
 
 export default function Statuses() {
   const [status, setStatus] = useState(statuses[0])
@@ -17,7 +17,7 @@ export default function Statuses() {
           <Listbox.Button className="relative border-gray-500 border-opacity-30 border-solid border-2 rounded-md h-11  w-full cursor-default py-2 pl-3 pr-10 text-left focus:outline-none focus:border-indigo-500 sm:text-sm">
             <span className="block truncate">{status.name}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
-              <svg width="16" height="7" xmlns="http://www.w3.org/2000/svg"><path stroke="#635FC7" stroke-width="2" fill="none" d="m1 1 4 4 4-4"/></svg>
+              <svg width="16" height="7" xmlns="http://www.w3.org/2000/svg"><path stroke="#635FC7" stroke-width="2" fill="none" d="m1 1 4 4 4-4" /></svg>
             </span>
           </Listbox.Button>
           <Transition
@@ -31,8 +31,7 @@ export default function Statuses() {
                 <Listbox.Option
                   key={statusIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-indigo-100 text-indigo-500' : 'text-gray-900'
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-indigo-100 text-indigo-500' : 'text-gray-900'
                     }`
                   }
                   value={status}
@@ -40,9 +39,8 @@ export default function Statuses() {
                   {({ selected }) => (
                     <>
                       <span
-                        className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}
+                        className={`block truncate ${selected ? 'font-medium' : 'font-normal'
+                          }`}
                       >
                         {status.name}
                       </span>

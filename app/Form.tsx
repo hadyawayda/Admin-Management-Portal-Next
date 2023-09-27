@@ -6,7 +6,7 @@ type Subtasks = {
   id: number,
   title: string,
   isCompleted: boolean,
-} 
+}
 
 type Tasks = {
   title: string,
@@ -18,17 +18,15 @@ type Tasks = {
 function Form() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [subtasks, setSubtasks] = useState<Subtasks[]>([{id:0, title: 'e.g. Make coffee', isCompleted:false}, {id:0, title: 'e.g. Drink coffee & smile', isCompleted:false}]);
+  const [subtasks, setSubtasks] = useState<Subtasks[]>([{ id: 0, title: 'e.g. Make coffee', isCompleted: false }, { id: 0, title: 'e.g. Drink coffee & smile', isCompleted: false }]);
   const [tasks, setTasks] = useState<Tasks[]>([]);
   const [status, setStatus] = useState('')
-  
-  function handleSubtask() {
-  }
+
   function handleAddSubtask() {
-    setSubtasks([...subtasks, {id:subtasks.length ,title: '', isCompleted: false}])
+    setSubtasks([...subtasks, { id: subtasks.length, title: '', isCompleted: false }])
   }
   function handleRemoveSubtask(id: number) {
-  setSubtasks(subtasks.filter((s, index) => index !== id));
+    setSubtasks(subtasks.filter((s, index) => index !== id));
   }
 
   return (
@@ -76,19 +74,19 @@ function Form() {
                 Subtasks
                 {subtasks.map((subtask, index) => (
                   <div className="flex justify-between items-center">
-                    <input key={subtask.id} type="text" onChange={handleSubtask} placeholder={subtask.title}
-                    className='task-background grow mt-3 hover:border-indigo-500 focus:border-white transition-colors duration-300 border-gray-500 border-opacity-30 border-solid border-2 rounded-md h-11 p-4 text-white placeholder-gray-500' />
+                    <input key={subtask.id} type="text" placeholder={subtask.title}
+                      className='task-background grow mt-3 hover:border-indigo-500 focus:border-white transition-colors duration-300 border-gray-500 border-opacity-30 border-solid border-2 rounded-md h-11 p-4 text-white placeholder-gray-500' />
                     <button type="button" onClick={() => handleRemoveSubtask(index)} className="w-8 h-8 ml-2 mt-2.5 flex justify-center items-center hover:border-indigo-500 focus:border-white transition-colors duration-300 border-opacity-30 focus:border-solid focus:border-2 rounded-md">
-                      <svg className="" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><g fill="#828FA3" fill-rule="evenodd"><path d="m12.728 0 2.122 2.122L2.122 14.85 0 12.728z"/><path d="M0 2.122 2.122 0 14.85 12.728l-2.122 2.122z"/></g></svg>
+                      <svg className="" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><g fill="#828FA3" fill-rule="evenodd"><path d="m12.728 0 2.122 2.122L2.122 14.85 0 12.728z" /><path d="M0 2.122 2.122 0 14.85 12.728l-2.122 2.122z" /></g></svg>
                     </button>
-                  </div>  
+                  </div>
                 ))}
-                
+
                 <button onClick={handleAddSubtask} className='bg-white mt-4 p-2.5 rounded-full indigo-text transition-colors duration-300'>+ Add New Subtask</button>
               </div>
               <div className="flex flex-col mt-8 justify-around">
                 Status
-                <Statuses/>
+                <Statuses />
               </div>
               <button
                 type="submit"
@@ -105,4 +103,4 @@ function Form() {
   );
 }
 
-export default Form ;
+export default Form;

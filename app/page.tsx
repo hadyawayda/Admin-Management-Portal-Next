@@ -1,6 +1,8 @@
+'use client'
+
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import './App.css'
+// import './App.css'
 import Main from './Body'
 import Form from './Form'
 

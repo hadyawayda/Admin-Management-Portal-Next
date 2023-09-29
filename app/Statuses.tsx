@@ -10,6 +10,7 @@ const statuses = [
 
 export default function Statuses() {
   const [status, setStatus] = useState(statuses[0])
+
   return (
     <div className="w-full">
       <Listbox value={status} onChange={setStatus}>
